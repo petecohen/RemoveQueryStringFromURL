@@ -17,3 +17,32 @@ This repository contains a compact, efficient JavaScript bookmarklet that silent
 
 ```javascript
 javascript:(function(){var u=new URL(location.href);u.search='';history.replaceState({},'',u);navigator.clipboard.writeText(u.toString());})();
+```
+
+4. Click the bookmark on any web page to clean the URL and copy it to your clipboard
+
+## Technical Details
+- Utilizes the `URL` API for robust URL parsing and manipulation
+- Employs `history.replaceState()` to update the URL without triggering a page reload
+- Uses the modern `navigator.clipboard` API for clipboard operations
+- Compatible with most modern web browsers that support these JavaScript APIs
+
+## Use Cases
+- Sharing URLs in professional settings without exposing session or tracking information
+- Cleaning URLs for documentation or reporting purposes
+- Quickly generating clean links for social media sharing
+- Streamlining URL management in web development and testing processes
+
+## Notes
+- This bookmarklet operates silently and provides no visual feedback. Users should verify the clipboard contents if confirmation is needed.
+- Clipboard operations may require appropriate permissions in some browsers.
+
+## Contributions
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page] if you want to contribute.
+
+## License
+[MIT License](LICENSE)
+
+---
+
+Created by Pete Cohen - building on the work of someone else (I can't remember who, sorry!) and iterating with the help of Claude Sonnet 3.5
